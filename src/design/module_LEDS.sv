@@ -1,3 +1,5 @@
+//Este modulo controla los datos enviados a los puertos de LEDs
+
 module module_LEDS # (  //Control de los leds (recibe el código binario)
 
     input logic [3 : 0] binary_code,    //Entrada: Código Grey ya convertido a binario
@@ -6,9 +8,3 @@ module module_LEDS # (  //Control de los leds (recibe el código binario)
     
     assign leds_code = binary_code;     //Asignación: Código binario al control de LEDs
 endmodule
-
-
-
-
-
-
