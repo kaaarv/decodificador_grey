@@ -9,9 +9,9 @@ DEVICE = GW1NR-LV9QN88PC6/I5
 PROYECT = greydecoder
 
 #Fuentes de diseno
-SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
+#SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
 #Si quieren indicarlas una a una, pueden hacerlo como en este ejemplo:
-#SOURCES = ../design/module_top_deco_gray.v ../design/module_input_deco_gray.v 
+SOURCES = ../design/gray_decoder.sv 
 
 #Fuente de simulacion
 #aca va el testbench que quieran simular
