@@ -6,4 +6,5 @@ module module_display #(
     output logic [6 : 0] display_code
 );
 
+
 endmodule
