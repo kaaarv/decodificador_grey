@@ -3,7 +3,8 @@
 module module_main (
 
     input logic [3 : 0] gray_code,      //Entrada: codigo Gray
-    output logic [6 : 0] display_code   //Salida: codigo al display
+    //output logic [6 : 0] display_code   //Salida: codigo al display
+    output logic y
 );
 
     logic [3 : 0] binary_code;  //Almacena temporalmente el codigo binario
@@ -13,8 +14,9 @@ module module_main (
         .binary(binary_code)        //Recoge el cdogio binario ya convertido y lo almacena
     );
 
-    module_display u_module_display(
+    module_display u_module_comparator(
         .binary_code(binary_code),      //Le envia la señal en binario al module_display
-        .display_code(display_code)      //Recibe el codigo para controlar el display
+        .display_code(y)      //Recibe el codigo para controlar el display
     );
+
 endmodule
