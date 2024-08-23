@@ -3,8 +3,8 @@
 module module_main (
 
     input logic [3 : 0] gray_code,      //Entrada: codigo Gray
-    //output logic [6 : 0] display_code   //Salida: codigo al display
-    output logic y
+    output logic [6 : 0] display_code   //Salida: codigo al display
+    output logic y //Salida: Almacena la informacion sobre las decenas
 );
 
     logic [3 : 0] binary_code;  //Almacena temporalmente el codigo binario
@@ -16,7 +16,14 @@ module module_main (
 
     module_display u_module_comparator(
         .binary_code(binary_code),      //Le envia la señal en binario al module_display
-        .display_code(y)      //Recibe el codigo para controlar el display
+        .display_code(y)      //Recibe el codigo para controlar el display.
+        //Ademas, y indica si se muestra 1 o 0 en las decenas
     );
+
+    //mux que va con el comparador (escoje que binario pasa al module display)
+
+    //mux que selecciona si se muestran las unidades o las decenas 
+
+
 
 endmodule
