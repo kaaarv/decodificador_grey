@@ -23,7 +23,4 @@ module module_main (
     //mux que va con el comparador (escoje que binario pasa al module display)
 
     //mux que selecciona si se muestran las unidades o las decenas 
-
-
-
 endmodule
