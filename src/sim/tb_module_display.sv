@@ -37,7 +37,7 @@ module tb_display;
 
     // Dump de las señales a un archivo VCD
     initial begin
-        $dumpfile("simulation.vcd"); // Nombre del archivo VCD
+        $dumpfile("display_simulation.vcd"); // Nombre del archivo VCD
         $dumpvars(0, tb_display); // Dump de todas las señales del testbench
     end
 

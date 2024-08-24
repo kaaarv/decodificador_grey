@@ -9,26 +9,26 @@ DEVICE = GW1NR-LV9QN88PC6/I5
 PROYECT = greydecoder
 
 #Fuentes de diseno
-#SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
+SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
 #Si quieren indicarlas una a una, pueden hacerlo como en este ejemplo:
-SOURCES = ../design/module_units.sv 
+#SOURCES = ../design/module_units.sv 
 
 #../design/gray_decoder.sv ../design/gray_to_leds.sv
 
 #Fuente de simulacion
 #aca va el testbench que quieran simular
-TESTBENCH = ../sim/tb_module_units.sv
+TESTBENCH = ../sim/tb_module_display.sv
 
 # Constraints para el proyecto
 #aca va el archivo de constraints del proyecto
 CONSTRAINTS = ../constr/constr.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
-TOP_DESIGN = units
-TOP_TB     = tb_units
+TOP_DESIGN = display
+TOP_TB     = tb_display
 
 #nombre del vcd que va a generar el tb
-VCD_FILE = simulation_comparator.vcd
+VCD_FILE = display_simulation.vcd
 
 
 all: synth pnr bitstream load
