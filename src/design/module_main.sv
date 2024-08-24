@@ -14,7 +14,7 @@ module module_main (
         .binary(binary_code)        //Recoge el cdogio binario ya convertido y lo almacena
     );
 
-    module_display u_module_comparator(
+    comparator u_comparator(
         .binary_code(binary_code),      //Le envia la señal en binario al module_display
         .display_code(y)      //Recibe el codigo para controlar el display.
         //Ademas, y indica si se muestra 1 o 0 en las decenas

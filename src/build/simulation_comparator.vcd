@@ -1,0 +1,43 @@
+$date
+	Fri Aug 23 17:42:28 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_module_comparator $end
+$var wire 1 ! y $end
+$var reg 4 " binary_code [3:0] $end
+$scope module uut $end
+$var wire 4 # binary_code [3:0] $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b110 #
+b110 "
+0!
+$end
+#10
+b1001 "
+b1001 #
+#20
+1!
+b1100 "
+b1100 #
+#30
+0!
+b1 "
+b1 #
+#40
+1!
+b1111 "
+b1111 #
+#50
