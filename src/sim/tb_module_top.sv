@@ -8,6 +8,8 @@ module tb_top;
 
     // Salida del módulo 'top'
     wire [6:0] display_code;
+    wire show_units;            // Wire para la señal show_units
+    wire [3:0] comparation;     // Wire para la señal comparation
 
     // Instancia del módulo 'top'
     top uut (
@@ -15,6 +17,10 @@ module tb_top;
         .show_decades(show_decades),
         .display_code(display_code)
     );
+
+    // Conectar las señales internas del módulo 'top' a los wires
+    assign show_units = uut.show_units;
+    //assign comparation = uut.show_units;
 
     // Generación de señales de prueba
     initial begin
@@ -26,20 +32,20 @@ module tb_top;
         // Verifica que el display muestra el valor binario correcto para valores de 0 a 15
         #10 gray_code = 4'b0000; // 0
         #10 gray_code = 4'b0001; // 1
-        #10 gray_code = 4'b0010; // 2
-        #10 gray_code = 4'b0011; // 3
-        #10 gray_code = 4'b0100; // 4
-        #10 gray_code = 4'b0101; // 5
-        #10 gray_code = 4'b0110; // 6
-        #10 gray_code = 4'b0111; // 7
-        #10 gray_code = 4'b1000; // 8
-        #10 gray_code = 4'b1001; // 9
-        #10 gray_code = 4'b1010; // 10
-        #10 gray_code = 4'b1011; // 11
-        #10 gray_code = 4'b1100; // 12
-        #10 gray_code = 4'b1101; // 13
-        #10 gray_code = 4'b1110; // 14
-        #10 gray_code = 4'b1111; // 15
+        #10 gray_code = 4'b0011; // 2
+        #10 gray_code = 4'b0010; // 3
+        #10 gray_code = 4'b0110; // 4
+        #10 gray_code = 4'b0111; // 5
+        #10 gray_code = 4'b0101; // 6
+        #10 gray_code = 4'b0100; // 7
+        #10 gray_code = 4'b1100; // 8
+        #10 gray_code = 4'b1101; // 9
+        #10 gray_code = 4'b1111; // 10
+        #10 gray_code = 4'b1110; // 11
+        #10 gray_code = 4'b1010; // 12
+        #10 gray_code = 4'b1011; // 13
+        #10 gray_code = 4'b1001; // 14
+        #10 gray_code = 4'b1000; // 15
 
         // Cambio de show_decades a 1
         #10 show_decades = 1;
@@ -48,20 +54,20 @@ module tb_top;
         // Verifica que el display muestra las decenas cuando el valor es mayor a 9
         #10 gray_code = 4'b0000; // 0
         #10 gray_code = 4'b0001; // 1
-        #10 gray_code = 4'b0010; // 2
-        #10 gray_code = 4'b0011; // 3
-        #10 gray_code = 4'b0100; // 4
-        #10 gray_code = 4'b0101; // 5
-        #10 gray_code = 4'b0110; // 6
-        #10 gray_code = 4'b0111; // 7
-        #10 gray_code = 4'b1000; // 8
-        #10 gray_code = 4'b1001; // 9
-        #10 gray_code = 4'b1010; // 10
-        #10 gray_code = 4'b1011; // 11
-        #10 gray_code = 4'b1100; // 12
-        #10 gray_code = 4'b1101; // 13
-        #10 gray_code = 4'b1110; // 14
-        #10 gray_code = 4'b1111; // 15
+        #10 gray_code = 4'b0011; // 2
+        #10 gray_code = 4'b0010; // 3
+        #10 gray_code = 4'b0110; // 4
+        #10 gray_code = 4'b0111; // 5
+        #10 gray_code = 4'b0101; // 6
+        #10 gray_code = 4'b0100; // 7
+        #10 gray_code = 4'b1100; // 8
+        #10 gray_code = 4'b1101; // 9
+        #10 gray_code = 4'b1111; // 10
+        #10 gray_code = 4'b1110; // 11
+        #10 gray_code = 4'b1010; // 12
+        #10 gray_code = 4'b1011; // 13
+        #10 gray_code = 4'b1001; // 14
+        #10 gray_code = 4'b1000; // 15
 
         // Finalización de la simulación
         #10 $finish;
@@ -69,8 +75,8 @@ module tb_top;
 
     // Monitorear las señales
     initial begin
-        $monitor("At time %t: gray_code = %b, show_decades = %b, display_code = %b",
-                 $time, gray_code, show_decades, display_code);
+        $monitor("At time %t: gray_code = %b, show_decades = %b, display_code = %b, show_units = %b",
+                 $time, gray_code, show_decades, display_code, show_units);
     end
 
     // Dump de la simulación para VCD

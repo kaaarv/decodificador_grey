@@ -8,7 +8,7 @@ module gray_to_leds (
     // Asignar los 4 bits del valor binario a los primeros 4 LEDs
     assign leds[3:0] = binary;
 
-    // Los últimos 2 LEDs apagados (puedes ajustar esto si es necesario)
+    // Los últimos 2 LEDs apagados 
     assign leds[5:4] = 2'b00;
 
 endmodule
