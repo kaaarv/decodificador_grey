@@ -24,12 +24,6 @@ module tb_display;
         binary_code = 4'b0111; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
         binary_code = 4'b1000; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
         binary_code = 4'b1001; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1010; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1011; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1100; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1101; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1110; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
-        binary_code = 4'b1111; #10; $display("Binary: %b, Display: %b", binary_code, display_code);
 
         // Terminar la simulación
         $finish;

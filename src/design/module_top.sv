@@ -3,7 +3,7 @@
 module module_main (
 
     input logic [3 : 0] gray_code,      //Entrada: codigo Gray
-    output logic [6 : 0] display_code   //Salida: codigo al display
+    output logic [6 : 0] display_code,   //Salida: codigo al display
     output logic y //Salida: Almacena la informacion sobre las decenas
 );
 

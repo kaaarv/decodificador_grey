@@ -1,0 +1,74 @@
+$date
+	Sun Aug 25 08:44:16 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb_display $end
+$var wire 7 ! display_code [6:0] $end
+$var reg 4 " binary_code [3:0] $end
+$scope module uut $end
+$var wire 4 # binary_code [3:0] $end
+$var wire 7 $ display_code [6:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1111110 $
+b0 #
+b0 "
+b1111110 !
+$end
+#10
+b110000 !
+b110000 $
+b1 "
+b1 #
+#20
+b1101101 !
+b1101101 $
+b10 "
+b10 #
+#30
+b1111001 !
+b1111001 $
+b11 "
+b11 #
+#40
+b110011 !
+b110011 $
+b100 "
+b100 #
+#50
+b1011011 !
+b1011011 $
+b101 "
+b101 #
+#60
+b1011111 !
+b1011111 $
+b110 "
+b110 #
+#70
+b1110000 !
+b1110000 $
+b111 "
+b111 #
+#80
+b1111111 !
+b1111111 $
+b1000 "
+b1000 #
+#90
+b1110011 !
+b1110011 $
+b1001 "
+b1001 #
+#100
