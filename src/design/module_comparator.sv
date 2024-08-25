@@ -6,9 +6,8 @@ module comparator (
     output logic y
  
 );
-//1. Comprobar si el binario es mayor o menor a 1001 (9) 
-//0 -> <9 and 1 -> >9
- assign y = binary_code[3] & (binary_code[2] | binary_code[1]);
-
-
+    //1. Comprobar si el binario es mayor o menor a 1001 (9) 
+    //0 -> <9 and 1 -> >9
+     assign y = binary_code[3] & (binary_code[2] | binary_code[1]);
+     
 endmodule
