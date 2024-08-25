@@ -9,7 +9,7 @@ DEVICE = GW1NR-LV9QN88PC6/I5
 PROYECT = greydecoder
 
 #Fuentes de diseno
-SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
+SOURCES := $(wildcard ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
 #Si quieren indicarlas una a una, pueden hacerlo como en este ejemplo:
 #SOURCES = ../design/module_units.sv 
 
@@ -24,11 +24,11 @@ TESTBENCH = ../sim/tb_module_top.sv
 CONSTRAINTS = ../constr/constr.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
-TOP_DESIGN = module_top
-TOP_TB     = tb_module_top
+TOP_DESIGN = top
+TOP_TB     = tb_top
 
 #nombre del vcd que va a generar el tb
-VCD_FILE = module_top_simulation.vcd
+VCD_FILE = tb_top_simulation.vcd
 
 
 all: synth pnr bitstream load

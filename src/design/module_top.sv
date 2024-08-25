@@ -1,6 +1,6 @@
 //Este módulo interconecta los tres sub módulos 
 
-module module_top (
+module top (
 
     input logic [3 : 0] gray_code,       //Entrada: codigo Gray
     input logic show_decades,            //Entrada: boton de decenas o unidades
@@ -9,6 +9,7 @@ module module_top (
 
     logic [3 : 0] binary_code;      //Almacena temporalmente el codigo binario
     logic [3 : 0] units_code;       //Almacena las unidades temporalmente
+    logic [3 : 0] decades_code;        //Almacena las decenas temporalmente
     logic [3 : 0] selected_code;    //Guarda el codigo a entregar en el module_display
     logic show_units;               //Almacena 0 si <9 o 1 si >9
 
@@ -17,22 +18,22 @@ module module_top (
         .binary(binary_code)        //Recoge el codigo binario ya convertido y lo almacena
     );
 
-    module_units u_module_units(
+    units u_module_units(
         .binary_code(binary_code),  //Envia el binario para separar unidades
         .binary_units(units_code)   //Almacena las unidades extraides
     );
 
-    module_comparator u_module_comparator(
+    comparator u_module_comparator(
         .binary_code(binary_code),      //Le envia la señal en binario al module_display
         .y(show_units)                  //Indica si n<9 o n>9
     );
 
     //mux que va con el comparador (escoje que binario pasa al module display)
-    assign selected_code = (show_units) ? units_code : binary_code;
+    assign decades_code = (show_units) ? 4'b0001 : 4'b0000; //Vale 1 si show_units == 1 y 0 si show_units == 0
+    assign selected_code = (show_decades) ? decades_code : (show_units ? units_code : binary_code); //Determina el codigo a enviar
 
-    module_display u_module_display(
+    display u_module_display(
         .binary_code(selected_code),
         .display_code(display_code)
     );
-    //mux que selecciona si se muestran las unidades o las decenas 
 endmodule
