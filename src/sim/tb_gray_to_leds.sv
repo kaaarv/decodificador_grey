@@ -1,9 +1,9 @@
 module tb_gray_to_leds;
 
     // Señales
-    reg [3:0] gray; // Entrada en Gray
-    wire [3:0] binary; // Salida en Binario
-    wire [5:0] leds; // Señales para los LEDs
+    logic [3:0] gray; // Entrada en Gray
+    logic [3:0] binary; // Salida en Binario
+    logic [5:0] leds; // Señales para los LEDs
 
     // Instanciación del módulo Gray Decoder
     gray_decoder uut_gray (

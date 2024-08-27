@@ -3,13 +3,13 @@
 module tb_top;
 
     // Entradas para el módulo 'top'
-    reg [3:0] gray_code;
-    reg show_decades;
+    logic [3:0] gray_code;
+    logic show_decades;
 
     // Salida del módulo 'top'
-    wire [6:0] display_code;
-    wire show_units;            // Wire para la señal show_units
-    wire [3:0] comparation;     // Wire para la señal comparation
+    logic [6:0] display_code;
+    logic show_units;            // Wire para la señal show_units
+    logic [3:0] comparation;     // Wire para la señal comparation
 
     // Instancia del módulo 'top'
     top uut (

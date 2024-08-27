@@ -1,8 +1,8 @@
 module tb_gray_decoder;
 
     // Señales
-    reg [3:0] gray;
-    wire [3:0] binary;
+    logic [3:0] gray;
+    logic [3:0] binary;
 
     // Instanciación del módulo
     gray_decoder uut (

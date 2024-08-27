@@ -2,8 +2,8 @@
 module tb_display;
 
     // Señales
-    reg [3:0] binary_code;
-    wire [6:0] display_code;
+    logic [3:0] binary_code;
+    logic [6:0] display_code;
 
     // Instanciación del módulo display
     display uut (
