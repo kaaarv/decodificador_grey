@@ -36,8 +36,26 @@ El module_display.sv es el que se encarga de convertir el dato en un código de 
 
 ![image](https://github.com/user-attachments/assets/2fa68a71-e467-43e5-be0e-06e8e309decc)
 
-## Módulo module_top.sv
+### Módulo module_top.sv
+Este es el módulo principal que conecta y maneja a los demás módulos dentro de la carpeta de design. El módulo recibe la señal directa que se envía por medio del DIP switch, así como la señal para controlar si se van a mostrar las decenas o las unidades por medio de un botón, seguidamente le envía el código recibido en Gray al decodificador gray_decoder.sv y almacena el dato devuelto en una variable lógica de 4 bits llamada binary_code.
 
+Luego, binary_code es enviada a grat_to_leds.sv para que este módulo devuelva una variable de 6 bits llamada leds, la cual será utilizada para controlar a los 6 LEDs que contiene la FPGA. 
+
+Al mismo tiempo, binary_code se envía al module_comparator.sv y module_units.sv para que se separen las unidades y se compruebe si el dato es mayor a 9 en una representación decimal, recibiendo show_units e units_code respectivamente. Luego, por medio de dos multiplexores, se verifica si en ese momento se desea mostrar las unidades o las decenas del número (si el botón está precionado o no), así como determinar qué código será el que se le enviará al display_code.sv para su codificación en un código adecuado para el display de 7 segmentos.
+
+![image](https://github.com/user-attachments/assets/66190b61-d27a-4bca-a06d-ef0928372ffb)
+
+Finalmente, el código que se seleccione y se almacene en selected_code es enviado a module_display.sv y este módulo entrega como resultado el código para controlar el display, que lleva por nombre display_code.
+
+## Diagramas de bloques
+
+## Ejemplo de simplificación de ecuaciones booleanas
+
+## Ejemplo y análisis de una simulación funcional
+
+## Análisis del consumo de recursos
+
+## Análisis de los problemas encontrados durante el desarrollo del proyecto
 
 
 
