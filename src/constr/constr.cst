@@ -1,40 +1,37 @@
-IO_LOC  "anodo_po" 56;
-IO_PORT "anodo_po" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
-
-IO_LOC  "show_decades" 33;
+IO_LOC  "show_decades" 63;
 IO_PORT "show_decades" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "gray_code[3]" 25;
+IO_LOC  "gray_code[3]" 32;
 IO_PORT "gray_code[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "gray_code[2]" 26;
+IO_LOC  "gray_code[2]" 31;
 IO_PORT "gray_code[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "gray_code[1]" 27;
+IO_LOC  "gray_code[1]" 49;
 IO_PORT "gray_code[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "gray_code[0]" 28;
+IO_LOC  "gray_code[0]" 48;
 IO_PORT "gray_code[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "display_code[0]" 51;
+IO_LOC  "display_code[0]" 76;
 IO_PORT "display_code[0]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[1]" 57;
+IO_LOC  "display_code[1]" 75;
 IO_PORT "display_code[1]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[2]" 55;
+IO_LOC  "display_code[2]" 74;
 IO_PORT "display_code[2]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[3]" 54;
+IO_LOC  "display_code[3]" 73;
 IO_PORT "display_code[3]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[4]" 53;
+IO_LOC  "display_code[4]" 72;
 IO_PORT "display_code[4]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[5]" 30;
+IO_LOC  "display_code[5]" 71;
 IO_PORT "display_code[5]" IO_TYPE=LVCMOS33;
 
-IO_LOC  "display_code[6]" 29;
+IO_LOC  "display_code[6]" 70;
 IO_PORT "display_code[6]" IO_TYPE=LVCMOS33;
 
 IO_LOC  "leds[0]" 10;
