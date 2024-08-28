@@ -52,7 +52,7 @@ Finalmente, el código que se seleccione y se almacene en selected_code es envia
 ## Ejemplo de simplificación de ecuaciones booleanas
 
 ## Ejemplo y análisis de una simulación funcional
-!(imagenes/graybinary.png)
+![image](imagenes/graybinary.png)
 
 
 ## Análisis del consumo de recursos
