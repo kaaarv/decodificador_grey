@@ -52,8 +52,21 @@ Finalmente, el código que se seleccione y se almacene en selected_code es envia
 ## Ejemplo de simplificación de ecuaciones booleanas
 
 ## Ejemplo y análisis de una simulación funcional
+A continuación, se presenta la simulación correspondiente al diseño del decodificador de Gray a Binario. Tal como se puede apreciar en la imagen, la decodificación se realizó de manera correcta, lo cual se verifica a través de varios casos. 
+
+Por ejemplo, al analizar el número decimal 2, este corresponde al valor 3 en código Gray y, al ser decodificado, se obtiene correctamente el valor binario 2. Otro caso a destacar es el número decimal 7, que en código Gray se representa como 4 y, tras la decodificación, se traduce al valor binario 7. De manera similar, el número decimal 15 se representa como 8 en código Gray, y el diseño lo convierte adecuadamente en 15 en binario. Estos ejemplos, junto con otros casos, demuestran que el diseño del decodificador ha sido exitoso.
 ![image](imagenes/graybinary.png)
 
+En el apartado "Subsistema de lectura y decodificación de código Gray" se detalló el módulo implementado para llevar a cabo esta tarea. El módulo gray_decoder implementado para realizar la conversión de Gray a binario se basa en un conjunto de operaciones lógicas que descomponen el valor en Gray en sus componentes binarios equivalentes. El bit más significativo del número binario es idéntico al bit más significativo del código Gray, mientras que los bits restantes se calculan mediante operaciones XOR sucesivas entre los bits adyacentes de Gray y el resultado parcial binario. Este método es eficiente porque preserva la relación secuencial entre los bits en Gray, lo que garantiza una conversión precisa y directa. La implementación ha demostrado ser correcta en las pruebas realizadas, lo que respalda su funcionalidad en el contexto del proyecto.
+
+
+Ahora, en la siguiente imagen se presenta la simulación del funcionamiento del sistema diseñado para decodificar el código Gray y visualizarlo en LEDs y un display de 7 segmentos.
+
+![image](imagenes/tbtop.png)
+
+Al comenzar la simulación, la señal gray_code, que representa el código Gray de 4 bits, se establece en 0. El módulo de decodificación convierte este código a binario (0), y los LEDs permanecen apagados, indicando que la conversión es correcta. A medida que se cambian los valores de gray_code, el sistema sigue decodificando adecuadamente cada entrada. Por ejemplo, cuando gray_code se establece en 1, se convierte correctamente a 1 en binario, encendiendo el LED correspondiente. El sistema maneja de manera efectiva todas las entradas posibles de código Gray, desde 0 hasta F, encendiendo los LEDs correctos para cada valor.
+
+El display de 7 segmentos también refleja correctamente la salida del sistema. La señal display_code se actualiza de acuerdo con la representación binaria del código Gray decodificado. Por ejemplo, cuando el código Gray correspondiente al número 6 se convierte en 4 en binario, el display_code muestra el valor 33 en la simulación. Este valor 33 corresponde a la configuración específica en la FPGA para encender los segmentos adecuados del display, lo que permite mostrar el número correcto (4). De manera similar, el sistema procesa otros códigos Gray y actualiza el display_code para representar correctamente los números en el display de 7 segmentos.
 
 ## Análisis del consumo de recursos
 
