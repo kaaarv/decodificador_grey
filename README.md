@@ -5,7 +5,7 @@ Elizondo Espinoza Juan Pablo
 
 Quiros Avila Karina
 
-Tencio Solano Jose Eduardo
+Tencio Solano José Eduardo
 ## Descripción de funcionamiento 
 Se trata de un circuito decodificador que recibe una señal de 4 bits por medio de un DIP switch, la señal de 4 bits es recibida por la FPGA la cual tiene todo el código en HDL que se encarga de decodificarlo utilizando álgebra booleana para que sea correctamente representado de las dos formas diferentes en las que se necesita; en el caso del display de 7 segmentos, se hace una codificación adicional para poder mostrar los valores numéricos en sistema decimal adecuadamente y se cuenta con otra entrada adicional que permite seleccionar si lo que se muestra en el display son las unidades o las decenas del número (en caso de que las tenga), al mismo tiempo que las luces LED muestran el código decodificado pero en sistema binario considerando que son cuatro luces LED (una para cada bit del número ingresado en Gray). 
 
@@ -39,7 +39,7 @@ El module_display.sv es el que se encarga de convertir el dato en un código de 
 ### Módulo module_top.sv
 Este es el módulo principal que conecta y maneja a los demás módulos dentro de la carpeta de design. El módulo recibe la señal directa que se envía por medio del DIP switch, así como la señal para controlar si se van a mostrar las decenas o las unidades por medio de un botón, seguidamente le envía el código recibido en Gray al decodificador gray_decoder.sv y almacena el dato devuelto en una variable lógica de 4 bits llamada binary_code.
 
-Luego, binary_code es enviada a grat_to_leds.sv para que este módulo devuelva una variable de 6 bits llamada leds, la cual será utilizada para controlar a los 6 LEDs que contiene la FPGA. 
+Luego, binary_code es enviada a gray_to_leds.sv para que este módulo devuelva una variable de 6 bits llamada leds, la cual será utilizada para controlar a los 6 LEDs que contiene la FPGA. 
 
 Al mismo tiempo, binary_code se envía al module_comparator.sv y module_units.sv para que se separen las unidades y se compruebe si el dato es mayor a 9 en una representación decimal, recibiendo show_units e units_code respectivamente. Luego, por medio de dos multiplexores, se verifica si en ese momento se desea mostrar las unidades o las decenas del número (si el botón está precionado o no), así como determinar qué código será el que se le enviará al display_code.sv para su codificación en un código adecuado para el display de 7 segmentos.
 
@@ -108,6 +108,30 @@ Buffers: Se utilizan 5 buffers de entrada (IBUF) y 13 buffers de salida (OBUF), 
 
 ### Resumen del Uso de recursos
 El diseño es eficiente en cuanto al uso de recursos, con un total de 246 celdas lógicas empleadas. No se utilizan recursos de memoria ni procesos secuenciales, lo que simplifica el diseño y lo hace adecuado para implementarse en la FPGA Tang Nano 9K. La distribución de celdas lógicas y el uso de multiplexores y LUTs refleja un enfoque optimizado para la conversión de código Gray a binario y la gestión de la visualización en los LEDs y el display de 7 segmentos.
+
+### Síntesis
+   Number of wires:                232
+   Number of wire bits:            298
+   Number of public wires:         232
+   Number of public wire bits:     298
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                246
+     ALU                             3
+     GND                             1
+     IBUF                            5
+     LUT1                           73
+     LUT2                            8
+     LUT3                           10
+     LUT4                           27
+     MUX2_LUT5                      56
+     MUX2_LUT6                      28
+     MUX2_LUT7                      14
+     MUX2_LUT8                       7
+     OBUF                           13
+     VCC                             1
+
 
 ## Análisis de los problemas encontrados durante el desarrollo del proyecto
 
