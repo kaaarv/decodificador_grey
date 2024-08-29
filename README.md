@@ -69,6 +69,21 @@ Cabe mencionar que los multiplexores que aparecen en el diagrama tienen dos sali
 
 ## Ejemplo de simplificación de ecuaciones booleanas
 
+En el proceso de conversión de código Gray a binario, se utilizan ecuaciones booleanas para calcular los bits binarios a partir de los bits del código Gray. Estas ecuaciones se derivan inicialmente de los mapas de Karnaugh presentados en la siguiente imagen. 
+![image](imagenes/mapak.png)
+
+La simplificación de estas ecuaciones es esencial para lograr una implementación eficiente en hardware, por ende se utilizan ecuaciones simplificadas mediante la operación XOR: 
+
+![image](imagenes/ecua.png)
+
+Siguiendo estas ecuaciones y el modulo gray_decoder, se obtiene que, En la ecuacion uno, para el bit más significativo del binario (binary[3]), se observa que es igual al bit más significativo del código Gray (gray[3]). Esta asignación directa se basa en la propiedad que el bit más significativo en Gray no se altera durante la conversión a binario: assign binary[3] = gray[3];.
+
+En la ecuación dos, para el segundo bit binario (binary[2]), se aplica la operación XOR entre el bit más significativo del Gray (gray[3]) y el segundo bit del Gray (gray[2]): assign binary[2] = gray[3] ^ gray[2];. Esta simplificación se deriva del hecho de que cada bit del binario depende de la diferencia entre bits consecutivos del Gray, reflejada en la operación XOR.
+
+En la ecuación tres, para el tercer bit del binario (binary[1]) se calcula mediante la operación XOR entre el segundo bit binario (binary[2]) y el tercer bit del Gray (gray[1]): assign binary[1] = binary[2] ^ gray[1];. Esta relación demuestra cómo el valor de cada bit binario es una combinación de los bits anteriores, siguiendo la lógica de que cada bit adicional en Gray se suma a los bits anteriores para formar el binario.
+
+Y finalmente, en la ecuación cuatro, para el bit menos significativo del binario (binary[0]) se determina mediante la operación XOR entre el tercer bit binario (binary[1]) y el bit menos significativo del Gray (gray[0]): assign binary[0] = binary[1] ^ gray[0];. Esta última ecuación completa el proceso de conversión asegurando que cada bit binario refleja correctamente la secuencia del código Gray.
+
 ## Ejemplo y análisis de una simulación funcional
 A continuación, se presenta la simulación correspondiente al diseño del decodificador de Gray a Binario. Tal como se puede apreciar en la imagen, la decodificación se realizó de manera correcta, lo cual se verifica a través de varios casos. 
 
