@@ -71,23 +71,23 @@ El display de 7 segmentos también refleja correctamente la salida del sistema. 
 ## Análisis del consumo de recursos
 El análisis de los recursos utilizados en el proyecto se ha realizado utilizando los datos generados por la síntesis de la FPGA. A continuación, se detallan los principales recursos utilizados:
 
-###Número de wires 
+### Número de wires 
 Total de Wires: 232
 Total de Bits en Wires: 298
 Número de Wires Públicos: 232
 Número de Bits en Wires Públicos: 298
 El diseño utiliza 232 wires, que representan las conexiones lógicas entre los diferentes bloques del circuito. Estos wires transportan un total de 298 bits de información. Todos los wires son públicos, lo que indica que están accesibles para la interconexión entre módulos.
 
-###Memorias
+### Memorias
 Número de Memorias: 0
 Número de Bits en Memorias: 0
 No se han utilizado bloques de memoria en este diseño. Esto es coherente con la naturaleza del proyecto, que no requiere almacenamiento de datos, sino que se basa en la conversión y despliegue de señales en tiempo real.
 
-###Procesos
+### Procesos
 Número de Procesos: 0
 El diseño no incluye procesos secuenciales. Esto sugiere que todo el circuito es combinacional, donde las salidas dependen directamente de las entradas sin la necesidad de elementos de almacenamiento como registros.
 
-###Celdas lógicas utilizadas
+### Celdas lógicas utilizadas
 Total de Celdas: 246
 ALU (Unidad Aritmética Lógica): 3
 GND (Tierra): 1
@@ -106,7 +106,7 @@ El diseño utiliza un total de 246 celdas lógicas, distribuidas principalmente 
 ALU: Se utilizan 3 ALUs, lo que sugiere que se realizan algunas operaciones aritméticas simples en el diseño.
 Buffers: Se utilizan 5 buffers de entrada (IBUF) y 13 buffers de salida (OBUF), lo que es consistente con la necesidad de gestionar las señales de entrada y salida en la FPGA.
 
-###Resumen del Uso de recursos
+### Resumen del Uso de recursos
 El diseño es eficiente en cuanto al uso de recursos, con un total de 246 celdas lógicas empleadas. No se utilizan recursos de memoria ni procesos secuenciales, lo que simplifica el diseño y lo hace adecuado para implementarse en la FPGA Tang Nano 9K. La distribución de celdas lógicas y el uso de multiplexores y LUTs refleja un enfoque optimizado para la conversión de código Gray a binario y la gestión de la visualización en los LEDs y el display de 7 segmentos.
 
 ## Análisis de los problemas encontrados durante el desarrollo del proyecto
