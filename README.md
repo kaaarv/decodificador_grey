@@ -69,6 +69,45 @@ Al comenzar la simulación, la señal gray_code, que representa el código Gray 
 El display de 7 segmentos también refleja correctamente la salida del sistema. La señal display_code se actualiza de acuerdo con la representación binaria del código Gray decodificado. Por ejemplo, cuando el código Gray correspondiente al número 6 se convierte en 4 en binario, el display_code muestra el valor 33 en la simulación. Este valor 33 corresponde a la configuración específica en la FPGA para encender los segmentos adecuados del display, lo que permite mostrar el número correcto (4). De manera similar, el sistema procesa otros códigos Gray y actualiza el display_code para representar correctamente los números en el display de 7 segmentos.
 
 ## Análisis del consumo de recursos
+El análisis de los recursos utilizados en el proyecto se ha realizado utilizando los datos generados por la síntesis de la FPGA. A continuación, se detallan los principales recursos utilizados:
+
+###Número de wires 
+Total de Wires: 232
+Total de Bits en Wires: 298
+Número de Wires Públicos: 232
+Número de Bits en Wires Públicos: 298
+El diseño utiliza 232 wires, que representan las conexiones lógicas entre los diferentes bloques del circuito. Estos wires transportan un total de 298 bits de información. Todos los wires son públicos, lo que indica que están accesibles para la interconexión entre módulos.
+
+###Memorias
+Número de Memorias: 0
+Número de Bits en Memorias: 0
+No se han utilizado bloques de memoria en este diseño. Esto es coherente con la naturaleza del proyecto, que no requiere almacenamiento de datos, sino que se basa en la conversión y despliegue de señales en tiempo real.
+
+###Procesos
+Número de Procesos: 0
+El diseño no incluye procesos secuenciales. Esto sugiere que todo el circuito es combinacional, donde las salidas dependen directamente de las entradas sin la necesidad de elementos de almacenamiento como registros.
+
+###Celdas lógicas utilizadas
+Total de Celdas: 246
+ALU (Unidad Aritmética Lógica): 3
+GND (Tierra): 1
+IBUF (Buffer de Entrada): 5
+LUT1 (Tabla de Búsqueda de 1 Entrada): 73
+LUT2 (Tabla de Búsqueda de 2 Entradas): 8
+LUT3 (Tabla de Búsqueda de 3 Entradas): 10
+LUT4 (Tabla de Búsqueda de 4 Entradas): 27
+MUX2_LUT5 (Multiplexor con Tabla de Búsqueda de 5 Entradas): 56
+MUX2_LUT6 (Multiplexor con Tabla de Búsqueda de 6 Entradas): 28
+MUX2_LUT7 (Multiplexor con Tabla de Búsqueda de 7 Entradas): 14
+MUX2_LUT8 (Multiplexor con Tabla de Búsqueda de 8 Entradas): 7
+OBUF (Buffer de Salida): 13
+VCC (Voltaje de Referencia Positivo): 1
+El diseño utiliza un total de 246 celdas lógicas, distribuidas principalmente en tablas de búsqueda (LUTs) y multiplexores. Las LUTs de 1 entrada (LUT1) son las más utilizadas, con un total de 73 instancias, seguidas por los multiplexores de 5 entradas (MUX2_LUT5), que son 56 en total.
+ALU: Se utilizan 3 ALUs, lo que sugiere que se realizan algunas operaciones aritméticas simples en el diseño.
+Buffers: Se utilizan 5 buffers de entrada (IBUF) y 13 buffers de salida (OBUF), lo que es consistente con la necesidad de gestionar las señales de entrada y salida en la FPGA.
+
+###Resumen del Uso de recursos
+El diseño es eficiente en cuanto al uso de recursos, con un total de 246 celdas lógicas empleadas. No se utilizan recursos de memoria ni procesos secuenciales, lo que simplifica el diseño y lo hace adecuado para implementarse en la FPGA Tang Nano 9K. La distribución de celdas lógicas y el uso de multiplexores y LUTs refleja un enfoque optimizado para la conversión de código Gray a binario y la gestión de la visualización en los LEDs y el display de 7 segmentos.
 
 ## Análisis de los problemas encontrados durante el desarrollo del proyecto
 
