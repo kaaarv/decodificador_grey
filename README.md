@@ -62,7 +62,7 @@ Este diagrama trabaja bajo la misma idea que el anterior.
 Este es el diagrama más complejo, ya que para desplegar el código en el display de 7 segmentos no es suficiente con decodificarlo, si no que se deben de tomar en consideración más aspectos. 
 ![image](https://github.com/user-attachments/assets/d4621c9b-e8f7-4d50-8d10-dd3256419b6a)
 
-Cabe mencionar que los multiplexores que aparecen en el diagrama tienen dos salidas; sin embargo, esto es para representar las dos salidas posibles, ya que existen varios escenarios, pero solo puede darse una única salida al mismo tiempo. Por eso para el primer mux se considera el caso en el que el botón esté precionado o no (esto para mostrar las decenas o no) y en el segundo mux se considera si se van a mostrar las unidades que ya se separaron o si no es necesario y se puede mostrar el código binario de 4 bits tal como se recibió. 
+Cabe mencionar que los multiplexores que aparecen en el diagrama tienen dos salidas; sin embargo, esto es para representar las dos salidas posibles, ya que existen varios escenarios, pero solo puede darse una única salida al mismo tiempo. Por eso para el primer mux se considera el caso en el que el botón esté precionado o no (esto para mostrar las decenas o no), y en el segundo mux se considera si se van a mostrar las unidades que ya se separaron, o si no es necesario y se puede mostrar el código binario de 4 bits tal como se recibió. 
 
 
 
