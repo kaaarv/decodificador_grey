@@ -76,7 +76,7 @@ La simplificación de estas ecuaciones es esencial para lograr una implementaci�
 
 ![image](imagenes/ecua.png)
 
-Siguiendo estas ecuaciones y el modulo gray_decoder, se obtiene que, En la ecuacion uno, para el bit más significativo del binario (binary[3]), se observa que es igual al bit más significativo del código Gray (gray[3]). Esta asignación directa se basa en la propiedad que el bit más significativo en Gray no se altera durante la conversión a binario: assign binary[3] = gray[3];.
+Siguiendo estas ecuaciones y el modulo gray_decoder, se obtiene que; en la ecuacion uno, para el bit más significativo del binario (binary[3]), se observa que es igual al bit más significativo del código Gray (gray[3]). Esta asignación directa se basa en la propiedad que el bit más significativo en Gray no se altera durante la conversión a binario: assign binary[3] = gray[3];.
 
 En la ecuación dos, para el segundo bit binario (binary[2]), se aplica la operación XOR entre el bit más significativo del Gray (gray[3]) y el segundo bit del Gray (gray[2]): assign binary[2] = gray[3] ^ gray[2];. Esta simplificación se deriva del hecho de que cada bit del binario depende de la diferencia entre bits consecutivos del Gray, reflejada en la operación XOR.
 
