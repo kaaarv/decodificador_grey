@@ -156,7 +156,7 @@ Durante el desarrollo del proyecto, se encontraron y solucionaron varios problem
 ### Problemas Eléctricos
 Uno de los problemas iniciales que se presentó estuvo relacionado con la conexión física del diseño. Al introducir el código Gray en la FPGA, solo se desplegaban los números 1, 3, 7 y 15 en los LEDs, lo que indicaba un funcionamiento incorrecto del decodificador Gray a binario. Después de una revisión exhaustiva, se identificó que el error se debía a la utilización de un pin incorrecto como alimentación en el circuito.
 
-•	Causa del Error: Uso de un pin incorrecto para la alimentación de la FPGA.
+•	Causa del Error: Uso de un pin incorrecto de la FPGA para la alimentación del circuito.
 
 •	Solución Implementada: Se revisaron meticulosamente las conexiones de los pines de entrada, alimentación y tierra (GND), y se corrigió la conexión del pin de alimentación. Tras esta corrección, el decodificador comenzó a funcionar correctamente, desplegando todos los números esperados en los LEDs.
 
