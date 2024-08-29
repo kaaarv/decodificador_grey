@@ -48,6 +48,24 @@ Al mismo tiempo, binary_code se envía al module_comparator.sv y module_units.sv
 Finalmente, el código que se seleccione y se almacene en selected_code es enviado a module_display.sv y este módulo entrega como resultado el código para controlar el display, que lleva por nombre display_code.
 
 ## Diagramas de bloques
+Se muestran tres diagramas de bloques que muestran el proceso que siguen los datos principales a lo largo del circuito, desde la entrada hasta las posibles salidas. Separados en los tres subsistemas.
+
+### Subsistema de lectura y decodificación de código Gray
+Como ya se mencionó, todos los módulos se conectan por medio del módulo top, por lo que la señal en Gray sale de dicho módulo y entra nuevamente decodificada en código binario. 
+![image](https://github.com/user-attachments/assets/e2396897-3e0f-48c0-a0df-0194e7084148)
+
+### Subsistema de código ingresado traducido a binario en luces LED
+Este diagrama trabaja bajo la misma idea que el anterior. 
+![image](https://github.com/user-attachments/assets/53880ccb-05b3-492d-9ffa-0678ac7c8821)
+
+### Subsistema de despliegue del código ingresado en el display de 7 segmentos
+Este es el diagrama más complejo, ya que para desplegar el código en el display de 7 segmentos no es suficiente con decodificarlo, si no que se deben de tomar en consideración más aspectos. 
+![image](https://github.com/user-attachments/assets/d4621c9b-e8f7-4d50-8d10-dd3256419b6a)
+
+Cabe mencionar que los multiplexores que aparecen en el diagrama tienen dos salidas; sin embargo, esto es para representar las dos salidas posibles, ya que existen varios escenarios, pero solo puede darse una única salida al mismo tiempo. Por eso para el primer mux se considera el caso en el que el botón esté precionado o no (esto para mostrar las decenas o no) y en el segundo mux se considera si se van a mostrar las unidades que ya se separaron o si no es necesario y se puede mostrar el código binario de 4 bits tal como se recibió. 
+
+
+
 
 ## Ejemplo de simplificación de ecuaciones booleanas
 
